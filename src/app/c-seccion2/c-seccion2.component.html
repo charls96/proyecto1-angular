@@ -1,1 +1,21 @@
 <p>Seccion 2: {{ ciudad }} {{ poblacion }}</p>
+
+<form [formGroup]="formComentario" (submit)="onSubmit(formComentario.value)">
+  <div class="form-group">
+    <label for="usuario">Usuario</label>
+    <input type="text" class="form-control" id="usuario" placeholder="Tu nombre de Usuario" formControlName="usuario" required>
+    <div class="input-group-append form-control-feedback" *ngIf="formValues['usuario'].errors" >
+      <p *ngIf="formValues['usuario'].errors['required']" class="text-danger"> *Obligatorio</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comentario</label>
+    <textarea class="form-control" id="comentario" rows="3" formControlName="comentario"></textarea>
+    <div class="input-group-append form-control-feedback" *ngIf="formValues['comentario'].errors" >
+      <p *ngIf="formValues['comentario'].errors['required']" class="text-danger"> *Obligatorio</p>
+      <p *ngIf="formValues['comentario'].errors['minlength']" class="text-danger"> *Debe tener minimo 10 caracteres</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="formComentario.invalid" >Enviar</button>
+
+</form>
