@@ -1,0 +1,19 @@
+<div class="my-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button (click)="IntercambiarCursos()">Intercambiar</button>
+        <app-comp-principal-hijo1></app-comp-principal-hijo1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <app-comp-principal-hijo2 [propiedadCurso1]="curso1" [propiedadContador]="contador"></app-comp-principal-hijo2>
+      </div>
+      <div class="col">
+        <app-comp-principal-hijo3 [propiedadCurso2]="curso2" [propiedadContador]="contador"></app-comp-principal-hijo3>
+        <app-comp-principal-hijo4></app-comp-principal-hijo4>
+      </div>
+    </div>
+  </div>
+</div>
